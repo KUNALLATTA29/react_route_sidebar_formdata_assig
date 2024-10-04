@@ -7,6 +7,7 @@ import Home from './component/Home.jsx'
 import About from './component/About.jsx'
 import Notfound from './component/Notfound.jsx'
 import ProductDetail from './component/ProductDetail.jsx'
+import LogIn from './component/LogIn.jsx'
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
     {
       path: '*',
       element: <Notfound />
+    },
+    {
+      path: 'login',
+      element: <LogIn/>
     }
   ]
   }

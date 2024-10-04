@@ -29,6 +29,14 @@ export default function Header() {
                 })}
                 >CONTACT</NavLink>
             </li>
+            <li>
+                <NavLink to="/login"
+                style={({isActive}) => ({
+                    color:isActive ? '#007bff' :'black',
+                    textDecoration: isActive ? 'underline' : 'none'
+                })}
+                >LogIn</NavLink>
+            </li>
         </ul>
     </nav>
   )
