@@ -1,0 +1,38 @@
+.product-detail {
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+}
+
+.title {
+    margin-bottom: 20px;
+}
+
+.content {
+    display: flex;
+}
+
+.large-image {
+    width: 50%;
+    object-fit: cover;
+    border: 1px solid #0056b3;
+}
+
+.details {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+    margin-top: 8%;
+    gap: 4%;
+}
+
+.details p {
+    margin: 5px 0;
+}
+
+.details .price,
+.details .rating {
+    font-size: 1.25rem;
+}

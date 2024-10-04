@@ -6,6 +6,7 @@ import Contact from './component/Contact.jsx'
 import Home from './component/Home.jsx'
 import About from './component/About.jsx'
 import Notfound from './component/Notfound.jsx'
+import ProductDetail from './component/ProductDetail.jsx'
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
     {
       path:"about",
       element:<About/>
+    },
+    {
+      path: 'product/:id',
+      element: <ProductDetail />,
     },
     {
       path:"contact",

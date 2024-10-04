@@ -4,6 +4,7 @@ import axios from 'axios'
 import './data.css'
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
+import { Link } from "react-router-dom";
 
 export default function Data() {
     const [products, setproducts] = useState([]);
@@ -34,6 +35,7 @@ export default function Data() {
         }
         return 0;
     }
+
 
     const handleRating = (rat) => {
         setrating((prev) => 
@@ -80,6 +82,10 @@ export default function Data() {
                         <p className="description">{product.description}</p>
                         <p className="price">Price: ${product.price}</p>
                         <p className="rating">Rating: {product.rating}</p>
+                        <Link to={`/product/${product.id}`}>
+                            <button>Show Detail</button>
+                        </Link>
+                        <button onClick={() => handleAddToCart(product)}>Add to Cart</button>
                     </li>
                 ))}
             </ul>
