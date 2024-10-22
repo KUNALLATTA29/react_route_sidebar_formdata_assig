@@ -1,18 +1,19 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import App from './App.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Contact from './component/Contact.jsx'
+import Root from './Redux/Root.jsx'
 import Home from './component/Home.jsx'
 import About from './component/About.jsx'
 import Notfound from './component/Notfound.jsx'
 import ProductDetail from './component/ProductDetail.jsx'
 import LogIn from './component/LogIn.jsx'
+import Cart from './component/Cart.jsx'
 
 const router = createBrowserRouter([
   {
     path:'/',
-    element:<App/>,
+    element:<Root/>,
     children:[
     {
       path:"",
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
     {
       path: 'login',
       element: <LogIn/>
+    },
+    {
+      path:'/cart',
+      element:<Cart/>
     }
   ]
   }
