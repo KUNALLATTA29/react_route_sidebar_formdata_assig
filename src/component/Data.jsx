@@ -1,6 +1,8 @@
 
 import { useState, useEffect } from "react"
 import axios from 'axios'
+import { useDispatch } from "react-redux";
+import { addToCart } from "../Redux/cartSlice";
 import './data.css'
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
@@ -11,11 +13,11 @@ export default function Data() {
     const [search, setsearch] = useState('');
     const [sortdata, setsortdata] = useState('')
     const [rating,setrating] = useState([]);
+    const dispatch = useDispatch();
 
     const fetch = async()=>{
         let response = await axios.get('https://dummyjson.com/products')
         setproducts(response.data.products); 
-        console.log(response.data.products);
     }
 
     const filterData = () => {
@@ -85,7 +87,7 @@ export default function Data() {
                         <Link to={`/product/${product.id}`}>
                             <button>Show Detail</button>
                         </Link>
-                        <button onClick={() => handleAddToCart(product)}>Add to Cart</button>
+                        <button onClick={() => dispatch(addToCart(product))}>Add to Cart</button>
                     </li>
                 ))}
             </ul>
